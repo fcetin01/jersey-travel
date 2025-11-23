@@ -1,4 +1,4 @@
-<!DOCTYPE html> ---
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -795,17 +795,6 @@
                 border-bottom: 1px solid var(--subtle-border);
             }
 
-            .close-menu {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                background: none;
-                border: none;
-                font-size: 2em;
-                color: var(--primary-navy);
-                cursor: pointer;
-            }
-
             .hero {
                 padding: 3em 0 4em;
             }
@@ -1203,7 +1192,7 @@
                         <div class="contact-icon-box">✉️</div>
                         <div class="contact-details">
                             <h4>Email Us</h4>
-                            <p><a href="/cdn-cgi/l/email-protection#dfb6b1b9b09fb8aaacabb0a9beabaaadb6a5b2f1bcb0b2"><span class="__cf_email__" data-cfemail="7e171018113e190b0d0a11081f0a0b0c170413501d1113">[email&#160;protected]</span></a></p>
+                            <p><a href="mailto:info@gustovaturizm.com">info@gustovaturizm.com</a></p>
                         </div>
                     </div>
 
@@ -1334,7 +1323,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Mobile menu toggle
         function toggleMenu() {
             document.getElementById('mainNav').classList.toggle('active');
@@ -1417,4 +1406,14 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in');
-                    entry.target.classList.add
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.process-step, .service-card, .feature-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
