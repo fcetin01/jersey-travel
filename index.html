@@ -1,1409 +1,517 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jersey Travel Agency – Luxury Corporate Travel Management & Concierge Services</title>
-    <meta name="description" content="Your corporate travel partner. One invoice, total transparency, 24/7 concierge. Focus on business, we handle the journey. TÜRSAB certified.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            /* Luxury Color Palette */
-            --primary-navy: #1B2845;
-            --deep-navy: #0D1528;
-            --gold-accent: #C9A96E;
-            --champagne: #E8D5B5;
-            --warm-white: #FAF8F3;
-            --soft-gray: #8B8B8B;
-            --charcoal: #2D2D2D;
-            --pure-white: #FFFFFF;
-            --subtle-border: #E5DCC9;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--charcoal);
-            line-height: 1.7;
-            background-color: var(--pure-white);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            width: 88%;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        /* Typography */
-        h1, h2, h3, h4, h5 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--primary-navy);
-            letter-spacing: -0.02em;
-        }
-
-        h1 { font-size: 3.5em; margin-bottom: 0.25em; }
-        h2 { font-size: 2.8em; margin-bottom: 0.4em; }
-        h3 { font-size: 2em; margin-bottom: 0.5em; }
-        h4 { font-size: 1.5em; margin-bottom: 0.4em; }
-
-        .subtitle {
-            font-family: 'Lato', sans-serif;
-            font-weight: 300;
-            font-size: 1.25em;
-            line-height: 1.6;
-            color: var(--soft-gray);
-        }
-
-        .text-center { text-align: center; }
-        .section-padding { padding: 7em 0; }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 16px 40px;
-            border-radius: 2px;
-            text-decoration: none;
-            font-family: 'Lato', sans-serif;
-            font-weight: 700;
-            font-size: 0.9em;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: var(--gold-accent);
-            color: var(--deep-navy);
-            border-color: var(--gold-accent);
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--gold-accent);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(201, 169, 110, 0.25);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--pure-white);
-            border-color: var(--pure-white);
-        }
-
-        .btn-secondary:hover {
-            background: var(--pure-white);
-            color: var(--primary-navy);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary-navy);
-            border-color: var(--primary-navy);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary-navy);
-            color: var(--pure-white);
-        }
-
-        /* Header */
-        .header-announcement {
-            background: var(--deep-navy);
-            color: var(--champagne);
-            padding: 12px 0;
-            font-size: 0.85em;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            text-align: center;
-        }
-
-        .header-announcement a {
-            color: var(--gold-accent);
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        header {
-            background: var(--pure-white);
-            border-bottom: 1px solid var(--subtle-border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
-        }
-
-        .header-main {
-            padding: 20px 0;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-navy);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 10px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--charcoal);
-            padding: 12px 20px;
-            display: block;
-            font-weight: 400;
-            font-size: 0.9em;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-            border-bottom: 2px solid transparent;
-        }
-
-        nav ul li a:hover {
-            color: var(--gold-accent);
-            border-bottom-color: var(--gold-accent);
-        }
-
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8em;
-            color: var(--primary-navy);
-            cursor: pointer;
-        }
-
-        .close-menu {
-            display: none;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 2em;
-            color: var(--primary-navy);
-            cursor: pointer;
-        }
-
-        /* Hero Section - REDUCED PADDING */
-        .hero {
-            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--primary-navy) 100%);
-            padding: 5em 0 4em;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(201, 169, 110, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(201, 169, 110, 0.15);
-            color: var(--champagne);
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 0.85em;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 2em;
-            border: 1px solid rgba(201, 169, 110, 0.3);
-        }
-
-        .hero h1 {
-            color: var(--pure-white);
-            margin-bottom: 0.4em;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .hero .subtitle {
-            color: var(--champagne);
-            font-size: 1.3em;
-            margin-bottom: 2.5em;
-            animation: fadeInUp 0.8s ease 0.2s backwards;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease 0.4s backwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 40px;
-            margin-top: 0;
-        }
-
-        .feature-card {
-            text-align: center;
-            background: var(--warm-white);
-            padding: 30px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: 1px solid var(--subtle-border);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .feature-icon {
-            font-size: 2.5em;
-            color: var(--gold-accent);
-            margin-bottom: 20px;
-        }
-
-        .feature-card h4 {
-            color: var(--primary-navy);
-            margin-bottom: 10px;
-            font-size: 1.1em;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .feature-card p {
-            color: var(--soft-gray);
-            font-size: 0.95em;
-            line-height: 1.5;
-        }
-
-        /* Process Section - HORIZONTAL TIMELINE */
-        .process-container {
-            margin-top: 4em;
-            position: relative;
-        }
-
-        .process-timeline {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-            position: relative;
-        }
-
-        .process-timeline::before {
-            content: '';
-            position: absolute;
-            top: 30px;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--gold-accent) 0%, var(--champagne) 100%);
-            z-index: 0;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-number {
-            background: var(--gold-accent);
-            color: var(--deep-navy);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.5em;
-            margin: 0 auto 20px;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 4px 15px rgba(201, 169, 110, 0.3);
-        }
-
-        .step-content h4 {
-            color: var(--primary-navy);
-            margin-bottom: 10px;
-            font-size: 1.2em;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .step-content p {
-            color: var(--soft-gray);
-            line-height: 1.5;
-            font-size: 0.95em;
-        }
-
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 4em;
-        }
-
-        .service-card {
-            background: var(--pure-white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .service-card.animate {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-image {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 50%, rgba(27, 40, 69, 0.8) 100%);
-        }
-
-        .service-content {
-            padding: 30px;
-        }
-
-        .service-content h3 {
-            color: var(--primary-navy);
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
-
-        .service-content p {
-            color: var(--soft-gray);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .service-features {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .service-features li {
-            color: var(--charcoal);
-            padding: 8px 0;
-            border-bottom: 1px solid var(--subtle-border);
-            display: flex;
-            align-items: center;
-        }
-
-        .service-features li:before {
-            content: '✓';
-            color: var(--gold-accent);
-            margin-right: 10px;
-            font-weight: 700;
-        }
-
-        /* Benefits Section */
-        .benefits-bg {
-            background: var(--warm-white);
-        }
-
-        .benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 4em;
-        }
-
-        .benefit-card {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .benefit-icon-box {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 25px;
-            background: linear-gradient(135deg, var(--gold-accent) 0%, var(--champagne) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            color: var(--deep-navy);
-            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
-        }
-
-        .benefit-card h4 {
-            color: var(--primary-navy);
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .benefit-card p {
-            color: var(--soft-gray);
-            line-height: 1.6;
-        }
-
-        /* Contact Section */
-        .contact-bg {
-            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--primary-navy) 100%);
-            color: var(--pure-white);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
-            margin-top: 4em;
-        }
-
-        .contact-info {
-            color: var(--pure-white);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 30px;
-        }
-
-        .contact-icon-box {
-            width: 50px;
-            height: 50px;
-            background: rgba(201, 169, 110, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            font-size: 1.3em;
-            border: 1px solid rgba(201, 169, 110, 0.3);
-        }
-
-        .contact-details h4 {
-            color: var(--champagne);
-            margin-bottom: 8px;
-            font-size: 1.2em;
-        }
-
-        .contact-details p, .contact-details a {
-            color: var(--pure-white);
-            font-size: 1.05em;
-        }
-
-        .contact-details a {
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-details a:hover {
-            color: var(--gold-accent);
-        }
-
-        .tursab-info-box {
-            background: rgba(201, 169, 110, 0.1);
-            padding: 25px;
-            border-radius: 8px;
-            margin-top: 30px;
-            border: 1px solid rgba(201, 169, 110, 0.3);
-        }
-
-        .tursab-info-box h4 {
-            color: var(--champagne);
-            margin-bottom: 15px;
-        }
-
-        .tursab-info-box p {
-            color: var(--pure-white);
-            margin-bottom: 8px;
-        }
-
-        /* Contact Form */
-        .contact-form-card {
-            background: var(--pure-white);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-form-card h3 {
-            color: var(--primary-navy);
-            margin-bottom: 30px;
-            font-size: 2.2em;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 0;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--charcoal);
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid var(--subtle-border);
-            border-radius: 4px;
-            font-size: 1em;
-            font-family: inherit;
-            transition: all 0.3s ease;
-            background: var(--pure-white);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold-accent);
-            background: var(--warm-white);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--deep-navy);
-            color: var(--pure-white);
-            padding: 4em 0 2em;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 40px;
-            margin-bottom: 3em;
-        }
-
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8em;
-            font-weight: 700;
-            color: var(--champagne);
-            margin-bottom: 20px;
-        }
-
-        .footer-column h4 {
-            color: var(--champagne);
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-column ul li a,
-        .footer-column p,
-        .footer-column a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-column ul li a:hover,
-        .footer-column a:hover {
-            color: var(--gold-accent);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(201, 169, 110, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: var(--champagne);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(201, 169, 110, 0.3);
-        }
-
-        .social-links a:hover {
-            background: var(--gold-accent);
-            color: var(--deep-navy);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2em;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9em;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                width: 92%;
-            }
-
-            h1 { font-size: 2.5em; }
-            h2 { font-size: 2em; }
-            h3 { font-size: 1.5em; }
-
-            .mobile-toggle {
-                display: block;
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                right: -300px;
-                width: 300px;
-                height: 100vh;
-                background: var(--pure-white);
-                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-                transition: right 0.3s ease;
-                z-index: 1001;
-            }
-
-            nav.active {
-                right: 0;
-            }
-
-            nav.active .close-menu {
-                display: block;
-            }
-
-            nav ul {
-                flex-direction: column;
-                padding: 80px 20px 20px;
-                gap: 0;
-            }
-
-            nav ul li a {
-                padding: 15px 20px;
-                border-bottom: 1px solid var(--subtle-border);
-            }
-
-            .hero {
-                padding: 3em 0 4em;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .hero-cta .btn {
-                width: 100%;
-                max-width: 280px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .process-timeline {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .process-timeline::before {
-                display: none;
-            }
-
-            .process-step {
-                display: flex;
-                align-items: center;
-                text-align: left;
-                gap: 20px;
-            }
-
-            .step-number {
-                margin: 0;
-                flex-shrink: 0;
-            }
-
-            .step-content {
-                text-align: left;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 2em; }
-            h2 { font-size: 1.6em; }
-
-            .section-padding {
-                padding: 4em 0;
-            }
-
-            .btn {
-                padding: 14px 30px;
-                font-size: 0.85em;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.title">Jersey Travel Agency – Kurumsal Seyahat Çözümleri | Otel, Uçak, Transfer, Vize</title>
+<meta name="description" data-i18n-content="meta.desc" content="Kurumsal otel, uçak, transfer ve vize: çoğu otelde acente fiyatı, tek fatura, 7/24 tek muhatap. TÜRSAB #18492.">
+<link rel="icon" href="img/logo-square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1C3247; --navy-2:#24405A; --gold:#A38C48; --gold-soft:#E7D9B0;
+  --ink:#111827; --muted:#6B7280; --line:#E5E7EB; --bg2:#F3F4F6; --white:#FFFFFF; --wa:#25D366;
+  --hf:'Playfair Display',Georgia,serif; --bf:'Montserrat',system-ui,sans-serif;
+  --r:22px; --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--bf);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--hf);line-height:1.1;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,5.5vw,4.2rem)}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:.4em}
+h3{font-size:1.15rem;margin-bottom:.35em}
+.wrap{width:min(var(--max),92%);margin:0 auto}
+.sub{color:var(--gold);font-size:1.05rem;font-weight:500}
+p.lead{color:var(--muted);font-size:1.05rem;max-width:58ch}
+section{padding:5.5rem 0}
+.alt{background:var(--bg2)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav .logo img{height:44px;width:auto}
+.nav ul{display:flex;gap:1.6rem;list-style:none}
+.nav ul a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--ink)}
+.nav ul a:hover{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:.8rem;font-weight:600}
+.lang button{border:0;background:transparent;padding:.4rem .75rem;cursor:pointer;font:inherit;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.btn{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-weight:600;font-size:.95rem;padding:.8rem 1.4rem;border-radius:999px;transition:background .2s,color .2s}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-2)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#1fb457}
+.btn-ghost{border:1.5px solid var(--navy);color:var(--navy)}
+.btn-ghost:hover{background:var(--navy);color:#fff}
+.burger{display:none;border:0;background:none;font-size:1.6rem;cursor:pointer;color:var(--navy)}
+.ico{width:1.15em;height:1.15em;fill:currentColor;flex:none}
+
+/* hero */
+.hero{padding:4.5rem 0 5rem}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+.hero h1{margin:.6rem 0 1rem}
+.hero .sub{font-size:1.25rem;margin-bottom:1.6rem;display:block}
+.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.hero .photo{border-radius:var(--r);overflow:hidden;aspect-ratio:.85;box-shadow:0 30px 60px -30px rgba(28,50,71,.45)}
+.hero .photo img{width:100%;height:100%;object-fit:cover}
+.tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:600;color:var(--navy);background:var(--bg2);padding:.4rem .9rem;border-radius:999px}
+
+/* benefits */
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.5rem}
+.benefit{background:var(--bg2);border-radius:var(--r);padding:1.8rem}
+.benefit .circle{width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--navy);margin-bottom:1.2rem}
+.benefit .circle .ico{width:1.4rem;height:1.4rem}
+.benefit p{color:var(--muted);font-size:.95rem}
+
+/* single invoice */
+.invoice .grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.chain{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:1.6rem 0}
+.chain .box{width:84px;height:84px;border-radius:18px;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.35rem;font-size:.75rem;font-weight:600}
+.chain .box .ico{width:1.5rem;height:1.5rem}
+.chain .op{color:var(--muted);font-size:1.3rem}
+.chain .sum{background:var(--gold);color:#fff;border-radius:18px;padding:0 1.4rem;height:84px;display:flex;align-items:center;font-family:var(--hf);font-weight:700;font-size:1.25rem}
+.checks{list-style:none;display:grid;gap:.7rem}
+.checks li{display:flex;gap:.7rem;align-items:flex-start;color:var(--ink)}
+.checks .ico{color:var(--navy);margin-top:.2rem}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.col{border-radius:var(--r);padding:1.6rem}
+.col.now{background:var(--bg2)}
+.col.us{background:var(--navy);color:#fff}
+.col h3{margin-bottom:1rem}
+.col ul{list-style:none;display:grid;gap:.8rem;font-size:.92rem}
+.col li{display:flex;gap:.7rem;align-items:flex-start}
+.col .dot{width:22px;height:22px;border-radius:50%;flex:none;display:grid;place-items:center;font-size:.7rem;font-weight:700}
+.col.now .dot{background:#FEE2E2;color:#DC2626}
+.col.us .dot{background:#fff;color:var(--navy)}
+
+/* roles */
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}
+.role{display:flex;gap:1.2rem;background:#fff;border-radius:var(--r);padding:1.6rem}
+.role .circle{width:56px;height:56px;flex:none;border-radius:50%;background:var(--bg2);display:grid;place-items:center;color:var(--navy)}
+.role .circle .ico{width:1.4rem;height:1.4rem}
+.role p{color:var(--muted);font-size:.93rem}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem;position:relative}
+.steps:before{content:"";position:absolute;left:12.5%;right:12.5%;top:36px;height:2px;background:var(--line)}
+.step{text-align:center;position:relative}
+.step .circle{width:72px;height:72px;border-radius:50%;background:var(--navy);border:5px solid #fff;display:grid;place-items:center;color:#fff;margin:0 auto 1rem}
+.step:last-child .circle{background:var(--gold)}
+.step .circle .ico{width:1.6rem;height:1.6rem}
+.step .n{font-size:.75rem;font-weight:700;letter-spacing:.15em;color:var(--gold)}
+.step h3{margin:.2rem 0 .3rem}
+.step p{color:var(--muted);font-size:.9rem;padding:0 .5rem}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.5rem}
+.service{background:var(--bg2);border-radius:var(--r);padding:1.6rem}
+.service .circle{width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--navy);margin-bottom:1rem}
+.service .circle .ico{width:1.3rem;height:1.3rem}
+.service p{color:var(--muted);font-size:.9rem}
+
+/* network */
+.network .grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.stat{background:#fff;border-radius:var(--r);padding:1.4rem 1.6rem}
+.stat b{font-family:var(--hf);font-size:2.2rem;color:var(--navy);display:block;line-height:1}
+.stat span{color:var(--muted);font-size:.88rem}
+.network .photo{border-radius:var(--r);overflow:hidden;aspect-ratio:1}
+.network .photo img{width:100%;height:100%;object-fit:cover}
+
+/* contact */
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.wa-card{background:var(--bg2);border-radius:var(--r);padding:2rem}
+.wa-card .head{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+.wa-card .head .circle{width:52px;height:52px;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#fff}
+.wa-card .num{font-size:1.9rem;font-weight:700;color:var(--navy);text-decoration:none;display:block;margin:.4rem 0 1.2rem}
+.wa-card .qr{display:flex;gap:1.2rem;align-items:center;background:#fff;border-radius:16px;padding:1rem}
+.wa-card .qr img{width:120px;height:120px}
+.wa-card .qr p{font-size:.9rem;color:var(--muted)}
+.info{display:grid;gap:.8rem;margin-top:1.6rem;font-size:.95rem}
+.info div{display:flex;gap:.7rem;align-items:flex-start}
+.info .ico{color:var(--navy);margin-top:.25rem}
+.info a{text-decoration:none}
+form{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:2rem;display:grid;gap:1rem}
+label{font-size:.85rem;font-weight:600;display:grid;gap:.35rem}
+input,select,textarea{font:inherit;padding:.75rem .9rem;border:1px solid var(--line);border-radius:12px;background:#fff;width:100%}
+textarea{min-height:110px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.note{font-size:.8rem;color:var(--muted)}
+
+footer{background:var(--navy);color:#C8D3DE;padding:3rem 0 2rem;font-size:.9rem}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;align-items:start}
+footer img{height:40px;width:auto;margin-bottom:1rem}
+footer h4{color:#fff;font-family:var(--bf);font-weight:600;margin-bottom:.8rem}
+footer ul{list-style:none;display:grid;gap:.45rem}
+footer a{text-decoration:none;color:#C8D3DE}
+footer a:hover{color:#fff}
+footer .bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:2rem;padding-top:1.2rem;font-size:.8rem;color:#8FA3B8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.wa-float{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px -10px rgba(0,0,0,.4);z-index:40}
+.wa-float .ico{width:1.7rem;height:1.7rem}
+
+@media (max-width:900px){
+  .hero .grid,.invoice .grid,.network .grid,.contact .grid,.compare{grid-template-columns:1fr}
+  .hero .photo{aspect-ratio:1.3;order:-1}
+  .benefits{grid-template-columns:1fr}
+  .roles{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:2rem}
+  .steps:before{display:none}
+  .services{grid-template-columns:1fr 1fr}
+  footer .grid{grid-template-columns:1fr}
+  .nav ul{display:none;position:absolute;left:0;right:0;top:72px;background:#fff;flex-direction:column;padding:1rem 4%;border-bottom:1px solid var(--line)}
+  .nav ul.open{display:flex}
+  .burger{display:block}
+  .nav-right .btn{display:none}
+  section{padding:3.5rem 0}
+}
+@media (max-width:560px){.services{grid-template-columns:1fr}.two{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-    <!-- Header Announcement Bar -->
-    <div class="header-announcement">
-        <span style="color: var(--gold-accent);">🇹🇷 Istanbul</span> | 24/7 Dedicated Concierge Service | TÜRSAB Certified Travel Agency | <a href="#contact">Request a Quote</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-tag" viewBox="0 0 512 512"><path d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></symbol>
+<symbol id="i-invoice" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM80 64h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16s7.2-16 16-16zm16 96H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V256c0-17.7 14.3-32 32-32zm0 32v64H288V256H96zM240 416h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></symbol>
+<symbol id="i-headset" viewBox="0 0 512 512"><path d="M256 48C141.1 48 48 141.1 48 256v40c0 13.3-10.7 24-24 24s-24-10.7-24-24V256C0 114.6 114.6 0 256 0S512 114.6 512 256V400.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24H240c-26.5 0-48-21.5-48-48s21.5-48 48-48h32c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40V256c0-114.9-93.1-208-208-208zM144 208h16c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H144c-35.3 0-64-28.7-64-64V272c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64v48c0 35.3-28.7 64-64 64H352c-17.7 0-32-14.3-32-32V240c0-17.7 14.3-32 32-32h16z"/></symbol>
+<symbol id="i-hotel" viewBox="0 0 512 512"><path d="M32 0C14.3 0 0 14.3 0 32S14.3 64 32 64V448c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32V64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM96 128c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H112c-8.8 0-16-7.2-16-16V128zm112-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V128c0-8.8 7.2-16 16-16zm96 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H320c-8.8 0-16-7.2-16-16V128zM96 224c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H112c-8.8 0-16-7.2-16-16V224zm112-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V224c0-8.8 7.2-16 16-16zm96 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H320c-8.8 0-16-7.2-16-16V224zm-96 88h64c35.3 0 64 28.7 64 64v64H144V376c0-35.3 28.7-64 64-64z"/></symbol>
+<symbol id="i-plane" viewBox="0 0 576 512"><path d="M482.3 192c34.2 0 93.7 29 93.7 64c0 36-59.5 64-93.7 64l-116.6 0L265.2 495.9c-5.7 10-16.3 16.1-27.8 16.1l-56.2 0c-10.6 0-18.3-10.2-15.4-20.4l49-171.6L112 320 68.8 377.6c-3 4-7.8 6.4-12.8 6.4l-42 0c-7.8 0-14-6.3-14-14c0-1.3 .2-2.6 .5-3.9L32 256 .5 145.9c-.4-1.3-.5-2.6-.5-3.9c0-7.8 6.3-14 14-14l42 0c5 0 9.8 2.4 12.8 6.4L112 192l102.9 0-49-171.6C162.9 10.2 170.6 0 181.2 0l56.2 0c11.5 0 22.1 6.2 27.8 16.1L365.7 192l116.6 0z"/></symbol>
+<symbol id="i-car" viewBox="0 0 512 512"><path d="M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></symbol>
+<symbol id="i-passport" viewBox="0 0 448 512"><path d="M0 64C0 28.7 28.7 0 64 0H384c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zM183 278.8c-27.9-13.2-48.4-39.4-53.7-70.8h39.1c1.6 30.4 7.7 53.8 14.6 70.8zm41.3 9.2l-.3 0-.3 0c-2.4-3.5-5.7-8.9-9.1-16.5c-6-13.6-12.4-34.3-14.2-63.5h47.1c-1.8 29.2-8.1 49.9-14.2 63.5c-3.4 7.6-6.7 13-9.1 16.5zm40.7-9.2c6.8-17.1 12.9-40.4 14.6-70.8h39.1c-5.3 31.4-25.8 57.6-53.7 70.8zM279.6 176c-1.6-30.4-7.7-53.8-14.6-70.8c27.9 13.2 48.4 39.4 53.7 70.8H279.6zM223.7 96l.3 0 .3 0c2.4 3.5 5.7 8.9 9.1 16.5c6 13.6 12.4 34.3 14.2 63.5H200.5c1.8-29.2 8.1-49.9 14.2-63.5c3.4-7.6 6.7-13 9.1-16.5zM183 105.2c-6.8 17.1-12.9 40.4-14.6 70.8H129.3c5.3-31.4 25.8-57.6 53.7-70.8zM96 192a128 128 0 1 0 256 0 128 128 0 1 0 -256 0zM112 384c-8.8 0-16 7.2-16 16s7.2 16 16 16H336c8.8 0 16-7.2 16-16s-7.2-16-16-16H112z"/></symbol>
+<symbol id="i-check" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></symbol>
+<symbol id="i-calc" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM96 64H288c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"/></symbol>
+<symbol id="i-star" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></symbol>
+<symbol id="i-users" viewBox="0 0 640 512"><path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z"/></symbol>
+<symbol id="i-award" viewBox="0 0 384 512"><path d="M173.8 5.5c11-7.3 25.4-7.3 36.4 0L228 17.2c6 3.9 13 5.8 20.1 5.4l21.3-1.3c13.2-.8 25.6 6.4 31.5 18.2l9.6 19.1c3.2 6.4 8.4 11.5 14.7 14.7L344.5 83c11.8 5.9 19 18.3 18.2 31.5l-1.3 21.3c-.4 7.1 1.5 14.2 5.4 20.1l11.8 17.8c7.3 11 7.3 25.4 0 36.4L366.8 228c-3.9 6-5.8 13-5.4 20.1l1.3 21.3c.8 13.2-6.4 25.6-18.2 31.5l-19.1 9.6c-6.4 3.2-11.5 8.4-14.7 14.7L301 344.5c-5.9 11.8-18.3 19-31.5 18.2l-21.3-1.3c-7.1-.4-14.2 1.5-20.1 5.4l-17.8 11.8c-11 7.3-25.4 7.3-36.4 0L156 366.8c-6-3.9-13-5.8-20.1-5.4l-21.3 1.3c-13.2 .8-25.6-6.4-31.5-18.2l-9.6-19.1c-3.2-6.4-8.4-11.5-14.7-14.7L39.5 301c-11.8-5.9-19-18.3-18.2-31.5l1.3-21.3c.4-7.1-1.5-14.2-5.4-20.1L5.5 210.2c-7.3-11-7.3-25.4 0-36.4L17.2 156c3.9-6 5.8-13 5.4-20.1l-1.3-21.3c-.8-13.2 6.4-25.6 18.2-31.5l19.1-9.6C65 70.2 70.2 65 73.4 58.6L83 39.5c5.9-11.8 18.3-19 31.5-18.2l21.3 1.3c7.1 .4 14.2-1.5 20.1-5.4L173.8 5.5zM272 192a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM1.3 441.8L44.4 339.3c.2 .1 .3 .2 .4 .4l9.6 19.1c11.7 23.2 36 37.3 62 35.8l21.3-1.3c.2 0 .5 0 .7 .2l17.8 11.8c5.1 3.3 10.5 5.9 16.1 7.7l-37.6 89.3c-2.3 5.5-7.4 9.2-13.3 9.7s-11.6-2.2-14.8-7.2L74.4 455.5l-56.1 8.3c-5.7 .8-11.4-1.5-15-6s-4.3-10.7-2.1-16zm248 60.4l-37.6-89.3c5.6-1.8 11-4.3 16.1-7.7l17.8-11.8c.2-.1 .4-.2 .7-.2l21.3 1.3c26 1.5 50.3-12.6 62-35.8l9.6-19.1c.1-.2 .2-.3 .4-.4l43.2 102.5c2.2 5.3 1.4 11.4-2.1 16s-9.3 6.9-15 6l-56.1-8.3-32.2 49.2c-3.2 5-8.9 7.7-14.8 7.2s-11-4.3-13.3-9.7z"/></symbol>
+<symbol id="i-wallet" viewBox="0 0 512 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V192c0-35.3-28.7-64-64-64H80c-8.8 0-16-7.2-16-16s7.2-16 16-16H448c17.7 0 32-14.3 32-32s-14.3-32-32-32H64zM416 272a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 512 512"><path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></symbol>
+<symbol id="i-wa" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+<symbol id="i-doc" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM112 256H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></symbol>
+<symbol id="i-tick" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></symbol>
+<symbol id="i-jet" viewBox="0 0 640 512"><path d="M160 24c0-13.3 10.7-24 24-24H296c13.3 0 24 10.7 24 24s-10.7 24-24 24H280V176H376l19.1-25.5c11.5-15.3 29.5-24.5 48.7-24.5H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H443.8c-9.1 0-17.7 4.3-23 11.7L403 192l17.9 22.3c5.4 7.4 13.9 11.7 23 11.7H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H443.8c-19.2 0-37.2-9.2-48.7-24.5L376 208H280V320H408c-8.8 0-16 7.2-16 16s7.2 16 16 16H592c26.5 0 48-21.5 48-48s-21.5-48-48-48H584V48c0-26.5-21.5-48-48-48H184c-13.3 0-24 10.7-24 24zM80 336c0 8.8 7.2 16 16 16H232c-8.8 0-16-7.2-16-16s7.2-16 16-16H96c-8.8 0-16 7.2-16 16zM0 464c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V416H0v48z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 512 512"><path d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM152 256c0 22.2 1.2 43.5 3.3 64H55.3c-4.8-20.5-7.3-41.9-7.3-64s2.5-43.5 7.3-64h100c-2.1 20.5-3.3 41.8-3.3 64zm52.6-96h102.8c2.4 20.4 3.8 41.8 3.8 64s-1.4 43.6-3.8 64H204.6c-2.4-20.4-3.8-41.8-3.8-64s1.4-43.6 3.8-64zm34.5-66.4c11.4-23.5 22.8-42.4 32.3-52.9 9.5 10.5 20.9 29.4 32.3 52.9 3.8 7.9 7.4 16.5 10.7 25.6H228.4c3.3-9.1 6.9-17.7 10.7-25.6zM188 129.6c4.6-10.9 9.7-21.3 15.2-31 9.9 3.3 19.2 8 27.8 13.8-6.4 5.4-12.2 11.3-17.5 17.2H188zm-46.8 32H55.3c19.4-54.1 60.4-97.9 112.8-119.8-15.2 25.3-27.3 61.6-34.9 119.8zm262.5 0h-90.2c-7.6-58.2-19.7-94.5-34.9-119.8 52.4 21.9 93.4 65.7 112.8 119.8zm.7 32c4.8 20.5 7.3 41.9 7.3 64s-2.5 43.5-7.3 64H356.7c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64h100zM355.7 350.4c-3.3 9.1-6.9 17.7-10.7 25.6-11.4 23.5-22.8 42.4-32.3 52.9-9.5-10.5-20.9-29.4-32.3-52.9-3.8-7.9-7.4-16.5-10.7-25.6h85.9zm26.3 0h74.7c-19.4 54.1-60.4 97.9-112.8 119.8 15.2-25.3 27.3-61.6 34.9-119.8zm-266.8 0c7.6 58.2 19.7 94.5 34.9 119.8-52.4-21.9-93.4-65.7-112.8-119.8h77.9z"/></symbol>
+<symbol id="i-kaaba" viewBox="0 0 576 512"><path d="M288 0c-8.3 0-16.5 1.6-24.2 4.7L45.1 81.2C29.8 86.9 20 101.6 20 118v276c0 16.4 9.8 31.1 25.1 36.8l218.7 76.5c15.6 5.5 32.8 5.5 48.4 0l218.7-76.5c15.3-5.7 25.1-20.4 25.1-36.8V118c0-16.4-9.8-31.1-25.1-36.8L312.2 4.7C304.5 1.6 296.3 0 288 0zm0 66l166.8 58.4L288 182.8 121.2 124.4 288 66zM68 160.3l196 68.6V450.4L68 381.8V160.3zm244 68.6l196-68.6V381.8L312 450.4V228.9zm-70.5 41.4l-22.9-8V320l22.9 8V270.3zm-64.8-22.7l-22.9-8v58.4l22.9 8V247.6zM384 300.1v-53.7l22.9-8v53.7l-22.9 8zm42.7-15v-53.7l22.9-8v53.7l-22.9 8z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L493.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Jersey Travel Agency"><img src="img/logo.png" alt="Jersey Travel Agency"></a>
+    <ul id="menu">
+      <li><a href="#neden" data-i18n="nav.why">Neden biz</a></li>
+      <li><a href="#fatura" data-i18n="nav.invoice">Tek fatura</a></li>
+      <li><a href="#nasil" data-i18n="nav.how">Nasıl çalışır</a></li>
+      <li><a href="#hizmetler" data-i18n="nav.services">Hizmetler</a></li>
+      <li><a href="#iletisim" data-i18n="nav.contact">İletişim</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-navy" href="#iletisim" data-i18n="nav.cta">Teklif al</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
     </div>
+  </div>
+</header>
 
-    <!-- Main Header -->
-    <header>
-        <div class="header-main">
-            <div class="container">
-                <div class="header-content">
-                    <div class="logo-section">
-                        <a href="#home" class="logo">JERSEY TRAVEL</a>
-                    </div>
-                    
-                    <nav id="mainNav">
-                        <button class="close-menu" onclick="closeMenu()">✕</button>
-                        <ul>
-                            <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                            <li><a href="#process" onclick="closeMenu()">How It Works</a></li>
-                            <li><a href="#services" onclick="closeMenu()">Services</a></li>
-                            <li><a href="#benefits" onclick="closeMenu()">Why Us</a></li>
-                            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-                        </ul>
-                    </nav>
-                    
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <a href="#contact" class="btn btn-primary">GET STARTED</a>
-                        <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
-                    </div>
-                </div>
-            </div>
+<main id="top">
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="tag"><svg class="ico"><use href="#i-check"/></svg><span data-i18n="hero.tag">Kurumsal seyahat çözümleri · TÜRSAB #18492</span></span>
+      <h1 data-i18n="hero.h1">Otel sitelerine fazla ödemeyin.</h1>
+      <span class="sub" data-i18n="hero.sub">Booking, Expedia ve otel sitesinden daha uygun. Aynı oteller, acente fiyatı, tek fatura.</span>
+      <p class="lead" data-i18n="hero.lead">Şirketinizin seyahat departmanı gibi çalışırız: siz mesaj atarsınız, otel, uçak, transfer ve vizeyi biz ayarlar, hepsini tek faturada keseriz.</p>
+      <div class="cta">
+        <a class="btn btn-wa" data-wa href="#"><svg class="ico"><use href="#i-wa"/></svg><span data-i18n="hero.cta1">WhatsApp'tan teklif al</span></a>
+        <a class="btn btn-ghost" href="#nasil" data-i18n="hero.cta2">Nasıl çalışır?</a>
+      </div>
+    </div>
+    <div class="photo"><img src="img/hero.jpg" alt="" loading="eager"></div>
+  </div>
+</section>
+
+<section id="neden">
+  <div class="wrap">
+    <h2 data-i18n="why.h2">Neden otelinizi bizden alın?</h2>
+    <p class="sub" data-i18n="why.sub">Booking, Expedia ve otel sitelerine göre üç somut fark</p>
+    <div class="benefits">
+      <div class="benefit"><div class="circle"><svg class="ico"><use href="#i-tag"/></svg></div><h3 data-i18n="why.1h">Size özel acente fiyatı</h3><p data-i18n="why.1p">Çoğu otelde net acente fiyatı; aynı oda, daha düşük tutar. Booking ve otel sitesiyle karşılaştırmalı teklif veririz.</p></div>
+      <div class="benefit"><div class="circle"><svg class="ico"><use href="#i-invoice"/></svg></div><h3 data-i18n="why.2h">Otel, uçak, transfer, vize: tek fatura</h3><p data-i18n="why.2p">Firmanız adına KDV'li e-fatura. Resepsiyonda ya da tedarikçiden fatura beklemek yok.</p></div>
+      <div class="benefit"><div class="circle"><svg class="ico"><use href="#i-headset"/></svg></div><h3 data-i18n="why.3h">7/24 tek muhatap</h3><p data-i18n="why.3p">Değişiklik, iptal, acil durum: tek numara, dakikalar içinde yanıt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="fatura" class="alt invoice">
+  <div class="wrap grid">
+    <div>
+      <h2 data-i18n="inv.h2">Tüm seyahatiniz, tek çözüm</h2>
+      <p class="sub" data-i18n="inv.sub">Seyahatin tamamını kurun, tek belgeyle kapatın</p>
+      <div class="chain">
+        <div class="box"><svg class="ico"><use href="#i-hotel"/></svg><span data-i18n="inv.hotel">Otel</span></div><span class="op">+</span>
+        <div class="box"><svg class="ico"><use href="#i-plane"/></svg><span data-i18n="inv.flight">Uçak</span></div><span class="op">+</span>
+        <div class="box"><svg class="ico"><use href="#i-car"/></svg><span data-i18n="inv.transfer">Transfer</span></div><span class="op">+</span>
+        <div class="box"><svg class="ico"><use href="#i-passport"/></svg><span data-i18n="inv.visa">Vize</span></div><span class="op">=</span>
+        <div class="sum" data-i18n="inv.sum">Tek fatura</div>
+      </div>
+      <ul class="checks">
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="inv.c1">Birden fazla çalışanın seyahati tek faturada; kişi veya proje bazında ayrıştırılmış</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="inv.c2">Teşvik, hibe ve destek başvurularında kullanılabilir fatura düzeni</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="inv.c3">Cari hesap ve aylık ekstre; seyahat başına ödeme yok, ay sonu tek mutabakat</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="inv.c4">Yurt içi ve yurt dışı faturalandırma (TR/EN); sigorta ve araç kiralama eklenebilir</span></li>
+      </ul>
+    </div>
+    <div class="compare">
+      <div class="col now">
+        <h3 data-i18n="cmp.now">Şimdi</h3>
+        <ul>
+          <li><span class="dot">✕</span><span data-i18n="cmp.n1">Her otel için ayrı arama, ayrı ödeme</span></li>
+          <li><span class="dot">✕</span><span data-i18n="cmp.n2">Check-out'ta resepsiyonda fatura bekleme</span></li>
+          <li><span class="dot">✕</span><span data-i18n="cmp.n3">Tedarikçiden fatura kovalama</span></li>
+          <li><span class="dot">✕</span><span data-i18n="cmp.n4">Muhasebede onlarca ayrı fiş ve fatura</span></li>
+        </ul>
+      </div>
+      <div class="col us">
+        <h3 data-i18n="cmp.us">Jersey Travel ile</h3>
+        <ul>
+          <li><span class="dot"><svg class="ico" style="width:.7em;height:.7em"><use href="#i-tick"/></svg></span><span data-i18n="cmp.u1">Tek mesajla rezervasyon: WhatsApp veya e-posta</span></li>
+          <li><span class="dot"><svg class="ico" style="width:.7em;height:.7em"><use href="#i-tick"/></svg></span><span data-i18n="cmp.u2">Fatura önceden hazır, resepsiyonda sıfır bekleme</span></li>
+          <li><span class="dot"><svg class="ico" style="width:.7em;height:.7em"><use href="#i-tick"/></svg></span><span data-i18n="cmp.u3">Fatura takibi tamamen bizde</span></li>
+          <li><span class="dot"><svg class="ico" style="width:.7em;height:.7em"><use href="#i-tick"/></svg></span><span data-i18n="cmp.u4">Tüm kalemler tek faturada, tek kayıt</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" style="padding-top:0">
+  <div class="wrap">
+    <h2 data-i18n="roles.h2">Şirketinizde herkesin işi kolaylaşır</h2>
+    <p class="sub" data-i18n="roles.sub">Her departman için ayrı bir fayda</p>
+    <div class="roles">
+      <div class="role"><div class="circle"><svg class="ico"><use href="#i-calc"/></svg></div><div><h3 data-i18n="roles.1h">Finans & Muhasebe</h3><p data-i18n="roles.1p">Tek fatura, aylık ekstre, e-fatura; mutabakat dakikalar sürer.</p></div></div>
+      <div class="role"><div class="circle"><svg class="ico"><use href="#i-star"/></svg></div><div><h3 data-i18n="roles.2h">Yöneticiler</h3><p data-i18n="roles.2p">Harcamalar tek ekranda; onay istenirse WhatsApp'tan tek tıkla.</p></div></div>
+      <div class="role"><div class="circle"><svg class="ico"><use href="#i-hotel"/></svg></div><div><h3 data-i18n="roles.3h">Çalışanlar</h3><p data-i18n="roles.3p">Otel aramakla, ödemekle, fatura almakla uğraşmaz; sadece mesaj atar.</p></div></div>
+      <div class="role"><div class="circle"><svg class="ico"><use href="#i-tag"/></svg></div><div><h3 data-i18n="roles.4h">Satın Alma</h3><p data-i18n="roles.4p">Booking ve otel sitesiyle karşılaştırmalı şeffaf fiyat; tek tedarikçi.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="nasil">
+  <div class="wrap">
+    <h2 data-i18n="how.h2">Nasıl çalışır?</h2>
+    <p class="sub" data-i18n="how.sub">Dört adım, tek muhatap</p>
+    <div class="steps">
+      <div class="step"><div class="circle"><svg class="ico"><use href="#i-wa"/></svg></div><div class="n">01</div><h3 data-i18n="how.1h">Talep</h3><p data-i18n="how.1p">WhatsApp veya e-posta ile otel, tarih, kişi sayısı.</p></div>
+      <div class="step"><div class="circle"><svg class="ico"><use href="#i-doc"/></svg></div><div class="n">02</div><h3 data-i18n="how.2h">Teklif</h3><p data-i18n="how.2p">Aynı gün alternatifli, Booking ile karşılaştırmalı net fiyat.</p></div>
+      <div class="step"><div class="circle"><svg class="ico"><use href="#i-tick"/></svg></div><div class="n">03</div><h3 data-i18n="how.3h">Onay</h3><p data-i18n="how.3p">İsterseniz yönetici onayı WhatsApp'tan tek tıkla; ardından voucher iletilir.</p></div>
+      <div class="step"><div class="circle"><svg class="ico"><use href="#i-invoice"/></svg></div><div class="n">04</div><h3 data-i18n="how.4h">Fatura</h3><p data-i18n="how.4p">Kalemler cariye işlenir; ay sonu tek e-fatura.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="hizmetler" class="alt">
+  <div class="wrap">
+    <h2 data-i18n="srv.h2">Otelin ötesinde</h2>
+    <p class="sub" data-i18n="srv.sub">Aynı hesap, aynı fatura, aynı muhatap</p>
+    <div class="services">
+      <div class="service"><div class="circle"><svg class="ico"><use href="#i-hotel"/></svg></div><h3 data-i18n="srv.1h">Otel rezervasyonu</h3><p data-i18n="srv.1p">Dünya genelinde oteller, net acente fiyatı, ücretsiz iptal seçenekleri işaretli.</p></div>
+      <div class="service"><div class="circle"><svg class="ico"><use href="#i-plane"/></svg></div><h3 data-i18n="srv.2h">Uçak bileti</h3><p data-i18n="srv.2p">THY, Pegasus, AJet, Emirates ve tüm havayolları; değişiklik ve iade takibi bizde.</p></div>
+      <div class="service"><div class="circle"><svg class="ico"><use href="#i-car"/></svg></div><h3 data-i18n="srv.3h">Transfer & vize</h3><p data-i18n="srv.3p">Havalimanı transferi, araç kiralama, vize başvuru ve belge takibi.</p></div>
+      <div class="service"><div class="circle"><svg class="ico"><use href="#i-jet"/></svg></div><h3 data-i18n="srv.4h">Özel jet & VIP</h3><p data-i18n="srv.4p">Jet kiralama, boş bacak fırsatları, CIP karşılama.</p></div>
+      <div class="service"><div class="circle"><svg class="ico"><use href="#i-kaaba"/></svg></div><h3 data-i18n="srv.5h">Umre & Hac</h3><p data-i18n="srv.5p">Bireysel ve kurumsal gruplar; Mekke–Medine otel ve paketleri.</p></div>
+      <div class="service"><div class="circle"><svg class="ico"><use href="#i-globe"/></svg></div><h3 data-i18n="srv.6h">Grup & incentive</h3><p data-i18n="srv.6p">Özbekistan, Orta Asya, Orta Doğu programları; bayi ve yönetim gezileri.</p></div>
+      <div class="service"><div class="circle"><svg class="ico"><use href="#i-users"/></svg></div><h3 data-i18n="srv.7h">Fuar & delegasyon</h3><p data-i18n="srv.7p">Fuar, toplantı ve heyet seyahatlerinde uçtan uca planlama.</p></div>
+      <div class="service"><div class="circle"><svg class="ico"><use href="#i-award"/></svg></div><h3 data-i18n="srv.8h">Teşvik uyumlu belge</h3><p data-i18n="srv.8p">Faturalar teşvik, hibe ve destek başvurularında kullanılabilir.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="network">
+  <div class="wrap grid">
+    <div>
+      <h2 data-i18n="net.h2">Otel ağımız</h2>
+      <p class="sub" data-i18n="net.sub">Dünya genelinde, net acente fiyatıyla</p>
+      <div class="stats">
+        <div class="stat"><b>1M+</b><span data-i18n="net.s1">otel, 5 global tedarikçi</span></div>
+        <div class="stat"><b>50+</b><span data-i18n="net.s2">ülkede aktif rezervasyon</span></div>
+        <div class="stat"><b>%100</b><span data-i18n="net.s3">fiyat karşılaştırması: Booking & otel sitesi</span></div>
+        <div class="stat"><b>0</b><span data-i18n="net.s4">rezervasyon ücreti</span></div>
+      </div>
+      <p class="lead" style="margin-top:1.4rem;font-size:.95rem" data-i18n="net.exp">Deneyim: İstanbul, Dubai, Bakü, Paris, Viyana, Milano, Londra, Mekke & Medine — iş otellerinden lüks segmente.</p>
+    </div>
+    <div class="photo"><img src="img/room.jpg" alt="" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="iletisim" class="alt contact">
+  <div class="wrap">
+    <h2 data-i18n="ct.h2">İlk oteliniz bizden.</h2>
+    <p class="sub" data-i18n="ct.sub">Bir sonraki konaklamanız için ücretsiz karşılaştırmalı teklif alın.</p>
+    <div class="grid" style="margin-top:2rem">
+      <div>
+        <div class="wa-card">
+          <div class="head"><div class="circle"><svg class="ico"><use href="#i-wa"/></svg></div><div><h3 style="margin:0" data-i18n="ct.wa">WhatsApp'tan yazın</h3><span class="note" data-i18n="ct.reply">Dakikalar içinde yanıt</span></div></div>
+          <a class="num" data-wa href="#">+90 850 305 40 94</a>
+          <div class="qr"><img id="qrimg" src="img/qr-tr.png" alt="WhatsApp QR"><p data-i18n="ct.qr">Kamerayı okutun — hazır mesajla teklif talebiniz anında bize düşsün.</p></div>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">Premium Corporate Travel Management</div>
-                
-                <h1>Your Corporate Travel Partner</h1>
-                
-                <p class="subtitle">
-                    One invoice. Total transparency. 24/7 concierge.<br>
-                    Focus on business, we handle the journey.
-                </p>
-                
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Request Consultation</a>
-                    <a href="#process" class="btn btn-secondary">Discover Our Approach</a>
-                </div>
-            </div>
+        <div class="info">
+          <div><svg class="ico"><use href="#i-mail"/></svg><a href="mailto:info@gustovaturizm.com">info@gustovaturizm.com</a></div>
+          <div><svg class="ico"><use href="#i-pin"/></svg><span data-i18n="ct.addr">DMN Plaza Kat 3, Akçaburgaz Mah., Esenyurt / İstanbul</span></div>
+          <div><svg class="ico"><use href="#i-award"/></svg><span data-i18n="ct.legal">GUSTOVA Turizm Tic. Ltd. Şti. · TÜRSAB #18492</span></div>
         </div>
-    </section>
-
-    <!-- Features Section -->
-    <section style="padding: 3em 0 5em;">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">✈</div>
-                    <h4>24/7 CONCIERGE</h4>
-                    <p>Expert Support Always</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📄</div>
-                    <h4>SINGLE INVOICE</h4>
-                    <p>Simplified Billing</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💎</div>
-                    <h4>TRANSPARENT</h4>
-                    <p>No Hidden Fees</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h4>TÜRSAB CERTIFIED</h4>
-                    <h4>TÜRSAB CERTIFIED</h4>
-                    <p>Licensed & Trusted</p>
-                </div>
-            </div>
+      </div>
+      <form action="https://formspree.io/f/mjkzrloy" method="POST">
+        <div class="two">
+          <label><span data-i18n="f.company">Firma</span><input name="company" required></label>
+          <label><span data-i18n="f.name">Ad Soyad</span><input name="name" required></label>
         </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="section-padding" id="process" style="background: var(--warm-white);">
-        <div class="container">
-            <div class="text-center">
-                <h2>How We Work</h2>
-                <p class="subtitle">Simple, efficient, and tailored to your needs</p>
-            </div>
-            
-            <div class="process-container">
-                <div class="process-timeline">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>UNDERSTAND</h4>
-                            <p>We learn your travel needs and preferences</p>
-                        </div>
-                    </div>
-                
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>BOOK</h4>
-                            <p>Flights, hotels, transfers - even via WhatsApp</p>
-                        </div>
-                    </div>
-                
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>INVOICE</h4>
-                            <p>One clear invoice for all services</p>
-                        </div>
-                    </div>
-                
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>REPORT</h4>
-                            <p>Monthly travel insights and savings</p>
-                        </div>
-                    </div>
-                
-                    <div class="process-step">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h4>SUPPORT</h4>
-                            <p>24/7 assistance throughout your journey</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="two">
+          <label><span data-i18n="f.email">E-posta</span><input type="email" name="email" required></label>
+          <label><span data-i18n="f.phone">Telefon</span><input type="tel" name="phone"></label>
         </div>
-    </section>
+        <label><span data-i18n="f.need">İhtiyacınız</span>
+          <select name="service">
+            <option data-i18n="f.o1">Otel rezervasyonu</option>
+            <option data-i18n="f.o2">Otel + uçak + transfer</option>
+            <option data-i18n="f.o3">Kurumsal seyahat yönetimi (cari hesap)</option>
+            <option data-i18n="f.o4">Özel jet / VIP</option>
+            <option data-i18n="f.o5">Grup, fuar veya incentive</option>
+            <option data-i18n="f.o6">Umre & Hac</option>
+          </select>
+        </label>
+        <label><span data-i18n="f.msg">Mesaj</span><textarea name="message" data-i18n-ph="f.msgph" placeholder="Otel, şehir, tarih, kişi sayısı…"></textarea></label>
+        <button class="btn btn-navy" type="submit" data-i18n="f.send">Teklif iste</button>
+        <span class="note" data-i18n="f.note">Formu gönderdiğinizde aynı gün içinde dönüş yapıyoruz.</span>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
 
-    <!-- Services Section -->
-    <section class="section-padding" id="services">
-        <div class="container">
-            <div class="text-center">
-                <h2>Our Services</h2>
-                <p class="subtitle">Comprehensive solutions for every travel requirement</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800');">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Flight Services</h3>
-                        <p>Premium business and first-class bookings with exclusive corporate rates and flexible policies.</p>
-                        <ul class="service-features">
-                            <li>Corporate rate agreements</li>
-                            <li>Flexible booking policies</li>
-                            <li>24/7 flight monitoring</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800');">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Luxury Hotels</h3>
-                        <p>Curated selection of premium accommodations with exclusive amenities and corporate benefits.</p>
-                        <ul class="service-features">
-                            <li>VIP treatment guaranteed</li>
-                            <li>Late checkout privileges</li>
-                            <li>Executive lounge access</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=800');">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Private Jets</h3>
-                        <p>Access to global fleet of private aircraft for ultimate flexibility and privacy.</p>
-                        <ul class="service-features">
-                            <li>Global aircraft network</li>
-                            <li>On-demand availability</li>
-                            <li>Custom catering options</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800');">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Yacht Charters</h3>
-                        <p>Exclusive yacht experiences for corporate events and executive retreats.</p>
-                        <ul class="service-features">
-                            <li>Luxury yacht selection</li>
-                            <li>Professional crew service</li>
-                            <li>Custom itineraries</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800');">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Ground Transport</h3>
-                        <p>Premium chauffeur services and luxury vehicle rentals worldwide.</p>
-                        <ul class="service-features">
-                            <li>Professional chauffeurs</li>
-                            <li>Luxury vehicle fleet</li>
-                            <li>Airport meet & greet</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800');">
-                        <div class="service-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Travel Management</h3>
-                        <p>Complete corporate travel program management with dedicated account support.</p>
-                        <ul class="service-features">
-                            <li>Dedicated account manager</li>
-                            <li>Travel policy compliance</li>
-                            <li>Expense management</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img src="img/logo-white.png" alt="Jersey Travel Agency">
+        <p data-i18n="ft.about">Kurumsal otel, uçak, transfer ve vize çözümleri. Acente fiyatı, tek fatura, 7/24 tek muhatap.</p>
+      </div>
+      <div>
+        <h4 data-i18n="ft.services">Hizmetler</h4>
+        <ul>
+          <li><a href="#hizmetler" data-i18n="srv.1h">Otel rezervasyonu</a></li>
+          <li><a href="#hizmetler" data-i18n="srv.2h">Uçak bileti</a></li>
+          <li><a href="#hizmetler" data-i18n="srv.3h">Transfer & vize</a></li>
+          <li><a href="#hizmetler" data-i18n="srv.4h">Özel jet & VIP</a></li>
+          <li><a href="#hizmetler" data-i18n="srv.5h">Umre & Hac</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft.contact">İletişim</h4>
+        <ul>
+          <li><a data-wa href="#">+90 850 305 40 94</a></li>
+          <li><a href="mailto:info@gustovaturizm.com">info@gustovaturizm.com</a></li>
+          <li><span data-i18n="ct.addr">DMN Plaza Kat 3, Akçaburgaz Mah., Esenyurt / İstanbul</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© <span id="yr"></span> Jersey Travel Agency — GUSTOVA Turizm Tic. Ltd. Şti. · TÜRSAB #18492</span>
+      <span>www.jerseytravelagency.com</span>
+    </div>
+  </div>
+</footer>
 
-    <!-- Benefits Section -->
-    <section class="section-padding benefits-bg" id="benefits">
-        <div class="container">
-            <div class="text-center">
-                <h2>Why Choose Jersey Travel</h2>
-                <p class="subtitle">Experience the difference of truly personalized service</p>
-            </div>
-            
-            <div class="benefit-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon-box">⏰</div>
-                    <h4>Save Time</h4>
-                    <p>One call handles everything. No more juggling multiple vendors or platforms.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon-box">💰</div>
-                    <h4>Reduce Costs</h4>
-                    <p>Corporate rates and volume discounts across our entire network.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon-box">📊</div>
-                    <h4>Track Everything</h4>
-                    <p>Detailed reporting and analytics for complete budget control.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon-box">🛡️</div>
-                    <h4>Stay Protected</h4>
-                    <p>TÜRSAB certified and insured for your complete peace of mind.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon-box">🌍</div>
-                    <h4>Global Reach</h4>
-                    <p>Worldwide network of trusted partners and suppliers.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon-box">🎯</div>
-                    <h4>Personal Touch</h4>
-                    <p>Dedicated account manager who knows your preferences.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<a class="wa-float" data-wa href="#" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
 
-    <!-- Contact Section -->
-    <section class="section-padding contact-bg" id="contact">
-        <div class="container">
-            <div class="text-center">
-                <h2 style="color: var(--pure-white);">Get in Touch</h2>
-                <p class="subtitle" style="color: var(--champagne);">Let's discuss how we can elevate your corporate travel</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon-box">📞</div>
-                        <div class="contact-details">
-                            <h4>24/7 Concierge</h4>
-                            <p><a href="tel:+908503024913">+90 850 302 4913</a></p>
-                            <p><a href="https://wa.me/908503024913">WhatsApp Available</a></p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon-box">✉️</div>
-                        <div class="contact-details">
-                            <h4>Email Us</h4>
-                            <p><a href="mailto:info@jerseytravelagency.com">info@jerseytravelagency.com</a></p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon-box">📍</div>
-                        <div class="contact-details">
-                            <h4>Headquarters</h4>
-                            <p>DMN PLAZA, 3rd Floor<br>34518 ESENYURT, ISTANBUL<br>TÜRKIYE</p>
-                        </div>
-                    </div>
-
-                    <div class="tursab-info-box">
-                        <h4>Official Credentials</h4>
-                        <p><strong>TÜRSAB Member:</strong> 18492</p>
-                        <p><strong>Company:</strong> GUSTOVA TURIZM TIC. LTD. STI.</p>
-                        <p><strong>Tax ID:</strong> 4121218415</p>
-                    </div>
-                </div>
-
-                <div class="contact-form-card">
-                    <h3>Request a Consultation</h3>
-                    <form action="https://formspree.io/f/mjkzrloy" method="POST" id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Company Name *</label>
-                                <input type="text" name="company" required placeholder="Your organization">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Full Name *</label>
-                                <input type="text" name="name" required placeholder="Your name">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Email Address *</label>
-                                <input type="email" name="email" required placeholder="name@company.com">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Phone Number *</label>
-                                <input type="tel" name="phone" required placeholder="+90 850 302 4913">
-                            </div>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label>Service Interest</label>
-                            <select name="service">
-                                <option>Please select...</option>
-                                <option>Flight Services</option>
-                                <option>Hotel Reservations</option>
-                                <option>Private Jet Charter</option>
-                                <option>Yacht Charter</option>
-                                <option>Ground Transportation</option>
-                                <option>Complete Travel Management</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label>Your Message</label>
-                            <textarea name="message" placeholder="Please describe your corporate travel requirements..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
-                        <p id="formStatus" style="margin-top: 20px; font-size: 0.9em; color: var(--soft-gray); text-align: center; display: none;"></p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <div class="footer-logo">JERSEY TRAVEL</div>
-                    <p>Gustova Turizm Tic. Ltd. Şti.<br>TÜRSAB Member: 18492</p>
-                    <p style="margin-top: 20px;">Your trusted partner in premium corporate travel management, delivering bespoke solutions with unwavering dedication to excellence.</p>
-                    <div class="social-links">
-                        <a href="#" title="LinkedIn">in</a>
-                        <a href="#" title="Instagram">◆</a>
-                        <a href="https://wa.me/908503024913" title="WhatsApp">◇</a>
-                    </div>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Flight Services</a></li>
-                        <li><a href="#services">Luxury Hotels</a></li>
-                        <li><a href="#services">Private Jets</a></li>
-                        <li><a href="#services">Yacht Charters</a></li>
-                        <li><a href="#services">Ground Transport</a></li>
-                        <li><a href="#services">Travel Management</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#home">About Us</a></li>
-                        <li><a href="#process">Our Approach</a></li>
-                        <li><a href="#benefits">Why Choose Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Get in Touch</h4>
-                    <p><strong>24/7 Concierge:</strong><br>
-                    <a href="tel:+908503024913">+90 850 302 4913</a></p>
-                    <p><strong>Email:</strong><br>
-                    <a href="mailto:info@jerseytravelagency.com">info@jerseytravelagency.com</a></p>
-                    <p><strong>Address:</strong><br>
-                    DMN PLAZA, 3rd Floor<br>
-                    34518 ESENYURT, ISTANBUL</p>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Jersey Travel Agency - Gustova Turizm Tic. Ltd. Şti. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        function toggleMenu() {
-            document.getElementById('mainNav').classList.toggle('active');
-        }
-
-        function closeMenu() {
-            document.getElementById('mainNav').classList.remove('active');
-        }
-
-        // AJAX Form submission without redirect
-        const contactForm = document.getElementById('contactForm');
-        const formStatus = document.getElementById('formStatus');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const submitButton = contactForm.querySelector('button[type="submit"]');
-                const originalText = submitButton.textContent;
-                submitButton.textContent = 'Sending...';
-                submitButton.disabled = true;
-                
-                try {
-                    const response = await fetch(contactForm.action, {
-                        method: 'POST',
-                        body: new FormData(contactForm),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        formStatus.style.display = 'block';
-                        formStatus.style.color = '#C9A96E';
-                        formStatus.innerHTML = '✓ Thank you! Your inquiry has been submitted successfully.<br>We will contact you within one business day.';
-                        contactForm.reset();
-                        
-                        // Scroll to form status
-                        formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        
-                        // Hide message after 10 seconds
-                        setTimeout(() => {
-                            formStatus.style.display = 'none';
-                        }, 10000);
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                } catch (error) {
-                    formStatus.style.display = 'block';
-                    formStatus.style.color = '#DC2626';
-                    formStatus.textContent = '✗ Sorry, there was an error sending your message. Please email us directly at info@jerseytravelagency.com';
-                }
-                
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            });
-        }
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && href !== '#home') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.process-step, .service-card, .feature-card').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+<script>
+const I18N = {
+tr:{},
+en:{
+ "meta.title":"Jersey Travel Agency – Corporate Travel Solutions",
+ "meta.desc":"Corporate hotels, flights, transfers and visas: agency rates at most hotels, one invoice, 24/7 single contact. TÜRSAB #18492.",
+ "nav.why":"Why us","nav.invoice":"One invoice","nav.how":"How it works","nav.services":"Services","nav.contact":"Contact","nav.cta":"Get a quote",
+ "hero.tag":"Corporate travel solutions · TÜRSAB #18492","hero.h1":"Stop overpaying hotel booking sites.","hero.sub":"Cheaper than Booking, Expedia and the hotel's own site. Same hotels, agency rates, one invoice.",
+ "hero.lead":"We work like your company's own travel desk: you send a message, we arrange the hotel, flights, transfers and visa, and put it all on one invoice.",
+ "hero.cta1":"Get a quote on WhatsApp","hero.cta2":"How it works",
+ "why.h2":"Why book hotels with us?","why.sub":"Three concrete differences vs. Booking, Expedia and hotel sites",
+ "why.1h":"Your own agency rate","why.1p":"Net agency rate at most hotels; same room, lower price. Every quote is compared with Booking and the hotel's own site.",
+ "why.2h":"Hotel, flights, transfers, visa: one invoice","why.2p":"One e-invoice in your company's name. No waiting for invoices at reception or from suppliers.",
+ "why.3h":"24/7 single contact","why.3p":"Changes, cancellations, emergencies: one number, reply in minutes.",
+ "inv.h2":"All your travel, one solution","inv.sub":"Build the whole trip, close it with one document",
+ "inv.hotel":"Hotel","inv.flight":"Flights","inv.transfer":"Transfers","inv.visa":"Visa","inv.sum":"One invoice",
+ "inv.c1":"Several travellers on one invoice, itemised by person or project","inv.c2":"Invoice format valid for incentive, grant and subsidy applications",
+ "inv.c3":"Credit account and monthly statement; no payment per trip, one reconciliation at month end","inv.c4":"Domestic and international invoicing (TR/EN); insurance and car rental can be added",
+ "cmp.now":"Today","cmp.n1":"Separate search and payment for every hotel","cmp.n2":"Waiting for invoices at check-out","cmp.n3":"Chasing suppliers for invoices","cmp.n4":"Dozens of receipts in accounting",
+ "cmp.us":"With Jersey Travel","cmp.u1":"Book with one message: WhatsApp or e-mail","cmp.u2":"Invoice ready in advance, zero waiting","cmp.u3":"We chase every invoice for you","cmp.u4":"All items on one invoice, one entry",
+ "roles.h2":"Easier for everyone in your company","roles.sub":"A distinct benefit for each department",
+ "roles.1h":"Finance & Accounting","roles.1p":"One invoice, monthly statement, e-invoice; reconcile in minutes.",
+ "roles.2h":"Managers","roles.2p":"All spend in one view; one-tap approval on WhatsApp if needed.",
+ "roles.3h":"Employees","roles.3p":"No searching, paying or collecting invoices; just send a message.",
+ "roles.4h":"Procurement","roles.4p":"Transparent price compared with Booking and hotel sites; one supplier.",
+ "how.h2":"How it works","how.sub":"Four steps, one contact",
+ "how.1h":"Request","how.1p":"Hotel, dates and guests via WhatsApp or e-mail.",
+ "how.2h":"Quote","how.2p":"Same-day options with a net price compared against Booking.",
+ "how.3h":"Confirm","how.3p":"Optional one-tap manager approval on WhatsApp; voucher sent.",
+ "how.4h":"Invoice","how.4p":"Items posted to your account; one e-invoice at month end.",
+ "srv.h2":"Beyond hotels","srv.sub":"Same account, same invoice, same contact",
+ "srv.1h":"Hotel bookings","srv.1p":"Hotels worldwide at net agency rates, free-cancellation options flagged.",
+ "srv.2h":"Flight tickets","srv.2p":"Turkish Airlines, Pegasus, AJet, Emirates and all carriers; changes and refunds handled.",
+ "srv.3h":"Transfers & visa","srv.3p":"Airport transfers, car rental, visa applications and document tracking.",
+ "srv.4h":"Private jet & VIP","srv.4p":"Jet charter, empty-leg deals, CIP meet & greet.",
+ "srv.5h":"Umrah & Hajj","srv.5p":"Individuals and corporate groups; Makkah–Madinah hotels and packages.",
+ "srv.6h":"Groups & incentives","srv.6p":"Uzbekistan, Central Asia, Middle East programmes; dealer and management trips.",
+ "srv.7h":"Trade fairs & delegations","srv.7p":"End-to-end planning for fairs, meetings and delegation travel.",
+ "srv.8h":"Grant-ready invoices","srv.8p":"Invoices usable in incentive, grant and subsidy applications.",
+ "net.h2":"Our hotel network","net.sub":"Worldwide, at net agency rates",
+ "net.s1":"hotels, 5 global suppliers","net.s2":"countries booked","net.s3":"price check vs. Booking & hotel site","net.s4":"booking fee",
+ "net.exp":"Experience: Istanbul, Dubai, Baku, Paris, Vienna, Milan, London, Makkah & Madinah — from business hotels to luxury.",
+ "ct.h2":"Let's start with your next hotel.","ct.sub":"Get a free comparative quote for your next stay.",
+ "ct.wa":"Message us on WhatsApp","ct.reply":"Reply in minutes","ct.qr":"Scan with your camera — a pre-filled quote request reaches us instantly.",
+ "ct.addr":"DMN Plaza Floor 3, Akçaburgaz Mah., Esenyurt / Istanbul","ct.legal":"GUSTOVA Turizm Tic. Ltd. Şti. · Licensed Turkish travel agency, TÜRSAB #18492",
+ "f.company":"Company","f.name":"Full name","f.email":"E-mail","f.phone":"Phone","f.need":"What do you need?",
+ "f.o1":"Hotel booking","f.o2":"Hotel + flights + transfers","f.o3":"Corporate travel management (credit account)","f.o4":"Private jet / VIP","f.o5":"Group, trade fair or incentive","f.o6":"Umrah & Hajj",
+ "f.msg":"Message","f.msgph":"Hotel, city, dates, number of guests…","f.send":"Request a quote","f.note":"We reply the same day.",
+ "ft.about":"Corporate hotels, flights, transfers and visa solutions. Agency rates, one invoice, 24/7 single contact.","ft.services":"Services","ft.contact":"Contact"
+}};
+const WA = {
+ tr:"https://wa.me/908503054094?text="+encodeURIComponent("Merhaba, kurumsal otel rezervasyonu için teklif almak istiyorum."),
+ en:"https://wa.me/908503054094?text="+encodeURIComponent("Hello, I'd like a quote for corporate hotel bookings.")
+};
+// capture Turkish defaults from the DOM once
+document.querySelectorAll('[data-i18n]').forEach(el=>{I18N.tr[el.dataset.i18n]=el.innerHTML;});
+document.querySelectorAll('[data-i18n-ph]').forEach(el=>{I18N.tr[el.dataset.i18nPh]=el.placeholder;});
+document.querySelectorAll('[data-i18n-content]').forEach(el=>{I18N.tr[el.dataset.i18nContent]=el.content;});
+function setLang(l){
+  const d=I18N[l]||{};
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=d[el.dataset.i18n]??I18N.tr[el.dataset.i18n];if(v!=null)el.innerHTML=v;});
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{el.placeholder=d[el.dataset.i18nPh]??I18N.tr[el.dataset.i18nPh];});
+  document.querySelectorAll('[data-i18n-content]').forEach(el=>{el.content=d[el.dataset.i18nContent]??I18N.tr[el.dataset.i18nContent];});
+  document.querySelectorAll('[data-wa]').forEach(a=>a.href=WA[l]);
+  document.getElementById('qrimg').src='img/qr-'+l+'.png';
+  document.documentElement.lang=l;
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));
+  try{localStorage.setItem('jt-lang',l)}catch(e){}
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+const q=new URLSearchParams(location.search).get('lang');
+let saved=null;try{saved=localStorage.getItem('jt-lang')}catch(e){}
+setLang(q==='en'||q==='tr'?q:(saved||'tr'));
+document.getElementById('yr').textContent=new Date().getFullYear();
+const burger=document.querySelector('.burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+</script>
 </body>
 </html>
