@@ -1,8 +1,17 @@
 # rate-compare — Paximum net vs Booking/OTA
 
-Mekke/Medine otelleri icin **Paximum net maliyetimiz** ile **Booking/OTA fiyatlarini**
-yan yana koyan tek seferlik analiz araci. Soru: sistematik olarak Booking'den ucuz muyuz,
-yoksa sadece bazi otellerde mi? Production servisi degil.
+Mekke/Medine otelleri icin **online (Booking/OTA) fiyatlari** ile **Paximum net
+maliyetimizi** yan yana koyan tek seferlik analiz araci. Production servisi degil.
+
+Iki taraf birbirinden **bagimsiz** calisir:
+
+| Mod | Komut | Ne yapar |
+|---|---|---|
+| Sadece online | `--ota-only` | Yalnizca MakCorps'tan Booking/Expedia/... fiyatlarini ceker. Paximum'a hic baglanmaz, kimlik bilgisi istemez. |
+| Karsilastirma | (bayrak yok) | Online fiyat + Paximum net maliyet, fark ve marj hesabi. |
+
+Once online fiyatlari toplamak icin `--ota-only` yeterli; kendi tedarik tarafi
+(Paximum) sonradan devreye alinabilir, o zaman ayni cache tekrar kullanilir.
 
 ## Kurulum
 
@@ -23,15 +32,25 @@ MAKCORPS_API_KEY=...
 ## Komutlar
 
 ```bash
-./venv/bin/python compare.py --dry-run            # kredi harcamadan maliyeti gor
-./venv/bin/python compare.py --limit 5            # 5 otel, 1 tarih senaryosu
-./venv/bin/python compare.py --limit 10 --dates 2 # 10 otel, 2 senaryo
-./venv/bin/python compare.py --limit 10 --margin 0.15
+# --- sadece online (OTA) fiyatlar ---
+./venv/bin/python compare.py --ota-only --dry-run --limit 5   # kredi harcamadan maliyeti gor
+./venv/bin/python compare.py --ota-only --limit 5             # 5 otel online fiyat
+./venv/bin/python compare.py --ota-only --limit 0             # listedeki 20 otelin hepsi
+./venv/bin/python compare.py --ota-only --hotel "Voco Makkah, Makkah"   # listede olmayan otel
+
+# --- online + kendi net maliyetimiz (karsilastirma) ---
+./venv/bin/python compare.py --limit 5
+./venv/bin/python compare.py --limit 10 --dates 2 --margin 0.15
 ```
+
+Sadece `.env` icinde `MAKCORPS_API_KEY` varsa `--ota-only` calisir;
+`PAXIMUM_PASSWORD` sadece karsilastirma modunda gerekir.
 
 | Bayrak | Varsayilan | Aciklama |
 |---|---|---|
-| `--limit` | 10 | Kac otel. Sehirler arasinda sirayla secer (5 dersen ~3 Mekke 2 Medine). |
+| `--limit` | 10 | Kac otel. `0` = hepsi. Sehirler arasinda sirayla secer (5 dersen ~3 Mekke 2 Medine). |
+| `--hotel` | – | Listede olmayan otel ekle: `--hotel "Otel Adi, Sehir"`. Birden fazla kez kullanilabilir, limitten muaftir. |
+| `--ota-only` | – | Sadece online/OTA fiyatlari cek, Paximum'a hic baglanma. |
 | `--dates` | 1 | Kac tarih senaryosu (`config.DATE_SCENARIOS` sirasiyla). |
 | `--margin` | 0.10 | Satis marji. Excel'deki `%N_marjla_satis` sutunu buna gore adlandirilir. |
 | `--budget` | 30 | MakCorps kredi butcesi. |
@@ -59,11 +78,14 @@ Planlanan kredi kalandan fazlaysa calistirma en basta iptal edilir. Cagrilar ara
 
 ## Cikti
 
-`output/karsilastirma_YYYYMMDD.xlsx`, 3 sayfa:
+Karsilastirma modunda `output/karsilastirma_YYYYMMDD.xlsx`,
+sadece online modunda `output/online_fiyatlar_YYYYMMDD.xlsx`. Her ikisi de 3 sayfa:
 
 1. **karsilastirma** — `otel, sehir, checkin, gece, paximum_net_usd, oda_tipi, pansiyon,
    booking_usd, en_ucuz_ota, en_ucuz_ota_usd, fark_usd, fark_yuzde, %10_marjla_satis,
    marjla_hala_ucuz_mu`
+   (sadece online modunda bu sayfa **online_fiyatlar** olur:
+   `otel, sehir, checkin, gece, booking_usd, en_ucuz_ota, en_ucuz_ota_usd, vendor_sayisi`)
 2. **ota_detay** — her otel icin **tum** vendor'lar (Booking satiri `booking_mu=EVET` ile isaretli)
 3. **basarisizlar** — veri gelmeyen oteller ve sebepleri
 
@@ -99,4 +121,5 @@ Tum ham yanitlar `raw/` altina yazilir (sonradan tekrar parse edilebilir).
 
 Bir otel icin veri gelmezse o satir bos gecilir, calistirma devam eder;
 sonunda basarisizlar hem konsolda listelenir hem Excel'de ayri sayfada durur.
-Paximum'a hic baglanilamazsa MakCorps kredisi harcanmadan cikilir.
+Karsilastirma modunda Paximum'a hic baglanilamazsa MakCorps kredisi harcanmadan
+cikilir (online fiyatlari yine de toplamak icin `--ota-only` kullan).
