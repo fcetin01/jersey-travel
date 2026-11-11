@@ -1,1 +1,14 @@
-{ "headers": [ { "source": "/img/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=2592000" } ] } ] }
+{
+ "headers": [
+  {
+   "source": "/img/(.*)",
+   "headers": [
+    {
+     "key": "Cache-Control",
+     "value": "public, max-age=2592000"
+    }
+   ]
+  }
+ ],
+ "cleanUrls": true
+}
