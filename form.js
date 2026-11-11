@@ -1,7 +1,7 @@
 // Hizmet sayfaları: menü + talep formu. Form, Google Apps Script web uygulamasına gönderir;
 // betik talebi info@gustovaturizm.com adresine e-posta olarak iletir (kaynak: ~/jersey-travel/tedarikci-hizmet-icerik/apps-script/).
 // FORM_URL, Apps Script "Dağıt → Web uygulaması" adımından sonra verilen /exec adresidir.
-const FORM_URL = "";
+const FORM_URL = "https://script.google.com/macros/s/AKfycbzH0C7qJYABuyr0xeG3hRJc_CUC-FaL7QzP-lXKrXBMWyFKvj07PesCT4DEjPDBha4GZg/exec";
 
 (function () {
   const yr = document.getElementById("yr");
